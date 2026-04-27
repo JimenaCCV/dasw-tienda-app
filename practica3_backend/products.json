@@ -1,0 +1,101 @@
+[
+  {
+    "id": "abc123",
+    "title": "Plátano",
+    "category": "fruta",
+    "price": 15.5,
+    "unit": "pieza",
+    "image": "http://localhost:3100/images/platano.jpg.webp",
+    "stock": 200
+  },
+  {
+    "id": "def456",
+    "title": "Manzana roja",
+    "category": "fruta",
+    "price": 22,
+    "unit": "pieza",
+    "image": "http://localhost:3100/images/manzana%20roja.jpg.webp",
+    "stock": 150
+  },
+  {
+    "id": "ghi789",
+    "title": "Leche entera",
+    "category": "lacteo",
+    "price": 28,
+    "unit": "litro",
+    "image": "http://localhost:3100/images/leche.jpeg",
+    "stock": 80
+  },
+  {
+    "id": "jkl012",
+    "title": "Queso manchego",
+    "category": "lacteo",
+    "price": 65,
+    "unit": "250 g",
+    "image": "http://localhost:3100/images/queso%20manchego.png",
+    "stock": 40
+  },
+  {
+    "id": "mno345",
+    "title": "Pan integral",
+    "category": "panaderia",
+    "price": 35,
+    "unit": "pieza",
+    "image": "http://localhost:3100/images/pan%20integral.png",
+    "stock": 60
+  },
+  {
+    "id": "pqr678",
+    "title": "Pechuga de pollo",
+    "category": "carnes",
+    "price": 95,
+    "unit": "kg",
+    "image": "http://localhost:3100/images/pechuga%20de%20pollo.png",
+    "stock": 30
+  },
+  {
+    "id": "stu901",
+    "title": "Naranja",
+    "category": "fruta",
+    "price": 12,
+    "unit": "pieza",
+    "image": "http://localhost:3100/images/naranja.jpg.webp",
+    "stock": 180
+  },
+  {
+    "id": "vwx234",
+    "title": "Aguacate",
+    "category": "fruta",
+    "price": 25,
+    "unit": "pieza",
+    "image": "http://localhost:3100/images/aguacate.jpg",
+    "stock": 90
+  },
+  {
+    "id": "yza567",
+    "title": "Yogurth natural",
+    "category": "lacteo",
+    "price": 18,
+    "unit": "150 g",
+    "image": "http://localhost:3100/images/yogurt.png",
+    "stock": 100
+  },
+  {
+    "id": "bcd890",
+    "title": "Huevo blanco",
+    "category": "huevos",
+    "price": 45,
+    "unit": "docena",
+    "image": "http://localhost:3100/images/huevo%20blanco.jpg.webp",
+    "stock": 120
+  },
+  {
+    "id": "klm789",
+    "title": "Bistec de res",
+    "category": "carnes",
+    "price": 130,
+    "unit": "kg",
+    "image": "http://localhost:3100/images/bistec%20de%20res.jpg",
+    "stock": 25
+  }
+]

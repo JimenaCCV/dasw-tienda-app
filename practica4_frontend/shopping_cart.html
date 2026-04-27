@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DASW - Carrito</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+      integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous" />
+    <style>
+      .cart-item {
+        border: 1px solid #d5dbdd;
+        padding: 12px 20px;
+        border-radius: 5px;
+        box-shadow: 0px 2px 1px rgba(0,0,0,0.04);
+        background: #fff;
+        margin-bottom: 12px;
+      }
+      .qty-input { width: 70px; display: inline-block; }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <a class="navbar-brand nav-item nav-link active" href="home.html">DASW</a>
+      <div class="flex-grow-1">
+        <form class="form-inline">
+          <input class="form-control col-sm-9 col-lg-10" type="search"
+            placeholder="Encuentra de todo empieza a buscar" aria-label="Search" />
+          <button class="btn btn-outline-light col-sm-3 col-lg-2" type="submit">Buscar</button>
+        </form>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown" id="navbarUser">
+            <!-- llenado dinámicamente por shopping_cart.js -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="shopping_cart.html">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="badge badge-warning" id="cartBadge">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <h2 class="text-center m-3">Resumen de Compra</h2>
+
+    <div class="container mt-4">
+      <div class="row">
+        <!-- Lista de items -->
+        <div class="col-md-8 col-12" id="listaCarrito">
+          <!-- Items generados dinámicamente -->
+        </div>
+
+        <!-- Panel de resumen -->
+        <div class="col-md-4 col-12 mt-md-0 mt-4">
+          <div class="card">
+            <div class="card-header bg-dark text-white">
+              <h5 class="mb-0">Resumen</h5>
+            </div>
+            <div class="card-body">
+              <ul class="list-group list-group-flush" id="resumenItems">
+              </ul>
+              <hr />
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Total:</h5>
+                <h5 class="mb-0 text-success" id="totalCompra">$0.00</h5>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-success btn-block">
+                <i class="fas fa-credit-card"></i> Proceder al pago
+              </button>
+              <button class="btn btn-outline-danger btn-block mt-2" id="btnVaciarCarrito">
+                <i class="fas fa-trash"></i> Vaciar carrito
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="shopping_cart.js"></script>
+  </body>
+</html>

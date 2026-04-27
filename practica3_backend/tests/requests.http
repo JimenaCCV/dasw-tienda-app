@@ -1,0 +1,191 @@
+@baseUrl = http://localhost:3100/api
+
+# ================================================
+# PRÁCTICA 3 — E-Commerce API
+# REST Client requests para probar todos los endpoints
+#
+# Headers usados:
+#   x-user  → cualquier nombre de usuario (requerido en rutas de usuario)
+#   x-auth  → debe ser "admin" para rutas de administrador
+# ================================================
+
+
+# ================================================
+# GET /api/products
+# Lista todos los productos.
+# - Usuario normal: no ve el campo "stock"
+# - Admin (x-auth: admin): sí ve el campo "stock"
+# ================================================
+
+### Caso exitoso — usuario normal ve productos sin stock
+GET {{baseUrl}}/products
+x-user: jimena
+
+###
+
+### Caso exitoso — admin ve productos con stock incluido
+GET {{baseUrl}}/products
+x-user: jimena
+x-auth: admin
+
+###
+
+### Caso exitoso — filtrar por rango de precio
+GET {{baseUrl}}/products?min=20&max=40
+x-user: jimena
+
+###
+
+### Caso error — falta el header x-user → 403 Forbidden
+GET {{baseUrl}}/products
+
+
+# ================================================
+# GET /api/products/:id
+# Obtiene un producto por su ID.
+# No requiere autenticación.
+# ================================================
+
+### Caso exitoso — ID existente en products.json
+GET {{baseUrl}}/products/abc123
+
+###
+
+### Caso error — ID que no existe → 404 Not Found
+GET {{baseUrl}}/products/noexiste999
+
+
+# ================================================
+# GET /api/products/cart
+# Devuelve los productos que están en el carrito
+# del usuario autenticado.
+# Requiere: x-user
+# ================================================
+
+### Caso exitoso — usuario con carrito guardado
+GET {{baseUrl}}/products/cart
+x-user: jimena
+
+###
+
+### Caso error — sin header x-user → 403 Forbidden
+GET {{baseUrl}}/products/cart
+
+
+# ================================================
+# POST /api/products/cart
+# Agrega IDs de productos al carrito del usuario.
+# Requiere: x-user
+# Body: array de IDs (strings)
+# ================================================
+
+### Caso exitoso — agrega productos válidos al carrito de jimena
+POST {{baseUrl}}/products/cart
+x-user: jimena
+Content-Type: application/json
+
+["abc123", "ghi789", "jkl012"]
+
+###
+
+### Caso error — sin header x-user → 403 Forbidden
+POST {{baseUrl}}/products/cart
+Content-Type: application/json
+
+["abc123", "ghi789"]
+
+
+# ================================================
+# POST /api/products
+# Crea un producto nuevo.
+# Requiere: x-auth: admin
+# ================================================
+
+### Caso exitoso — admin crea un producto nuevo
+POST {{baseUrl}}/products
+x-auth: admin
+Content-Type: application/json
+
+{
+  "title": "Aguacate Hass",
+  "category": "fruta",
+  "price": 18.5,
+  "stock": 90
+}
+
+###
+
+### Caso error — usuario sin permisos de admin → 403 Forbidden
+POST {{baseUrl}}/products
+x-auth: usuario
+Content-Type: application/json
+
+{
+  "title": "Aguacate Hass",
+  "category": "fruta",
+  "price": 18.5,
+  "stock": 90
+}
+
+
+# ================================================
+# PUT /api/products/:id
+# Actualiza un producto existente.
+# Requiere: x-auth: admin
+# ================================================
+
+### Caso exitoso — admin actualiza el Plátano
+PUT {{baseUrl}}/products/abc123
+x-auth: admin
+Content-Type: application/json
+
+{
+  "title": "Plátano Tabasco",
+  "price": 17.0,
+  "stock": 220
+}
+
+###
+
+### Caso error — sin credenciales de admin → 403 Forbidden
+PUT {{baseUrl}}/products/abc123
+Content-Type: application/json
+
+{
+  "title": "Plátano Tabasco",
+  "price": 17.0
+}
+
+###
+
+### Caso error — ID que no existe → 404 Not Found
+PUT {{baseUrl}}/products/noexiste999
+x-auth: admin
+Content-Type: application/json
+
+{
+  "title": "Producto inventado",
+  "price": 10
+}
+
+
+# ================================================
+# DELETE /api/products/:id
+# Elimina un producto por ID.
+# Requiere: x-auth: admin
+# ================================================
+
+### Caso exitoso — admin elimina el Pan integral
+DELETE {{baseUrl}}/products/mno345
+x-auth: admin
+
+###
+
+### Caso error — sin header x-auth → 403 Forbidden
+DELETE {{baseUrl}}/products/mno345
+
+###
+
+### Caso error — ID inexistente → 404 Not Found
+DELETE {{baseUrl}}/products/noexiste999
+x-auth: admin

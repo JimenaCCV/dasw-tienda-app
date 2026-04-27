@@ -1,0 +1,52 @@
+[
+  {
+    "user": "jimena",
+    "cart": [
+      "ghi789",
+      "abc123",
+      "def456"
+    ]
+  },
+  {
+    "user": "julian",
+    "cart": [
+      "ghi789",
+      "abc123",
+      "def456"
+    ]
+  },
+  {
+    "user": "juan",
+    "cart": [
+      "ghi789",
+      "abc123",
+      "def456"
+    ]
+  },
+  {
+    "user": "carlos",
+    "cart": [
+      "ghi789",
+      "abc123",
+      "def456",
+      "mno345"
+    ]
+  },
+  {
+    "user": "jose",
+    "cart": [
+      "ghi789",
+      "abc123",
+      "def456"
+    ]
+  },
+  {
+    "user": "maria",
+    "cart": [
+      "ghi789",
+      "abc123",
+      "def456",
+      "jkl012"
+    ]
+  } 
+]
