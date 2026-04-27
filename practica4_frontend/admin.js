@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3100/api";
+const API_URL = "https://dasw-tienda-app-production.up.railway.app/api";
 
 // --- Auth ---
 
